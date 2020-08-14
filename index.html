@@ -22,12 +22,13 @@
         <main class="main-container" >
             <canvas id="canvas" height="450" width="450"></canvas>
             <div class="controls">
-            <input type="text" placeholder="enter meme" class="meme-str" onkeypress="onWriteText(this.value)">
-            <input type="text" placeholder="enter meme" onchange ="onWriteButtomText(this.value)">
+            <input type="text" placeholder="enter meme" class="meme-str" onkeyup="onWriteText(this.value)">
+            <!-- <input type="text" placeholder="enter meme" onchange ="onWriteButtomText(this.value)"> -->
             <button onclick="onIncreaseFont()">increase</button>
             <button onclick="onDecreaseFont()">decrease</button>
             <button onclick="onRowUp()">up</button>
             <button onclick="onRowDown()">down</button>
+            <button onclick="onSwitchLine()">Switch Lines</button>
             
         </div>
         </main>

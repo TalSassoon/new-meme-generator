@@ -14,6 +14,7 @@ function drawCanvas() {
 }
 
 function drawImgFromlocal() {
+    clearCanvas();
     let img = new Image()
     let imgUrl = getImgUrl()
 
@@ -25,26 +26,31 @@ function drawImgFromlocal() {
 
 
 function drawText() {
-    let text =getimgText();
     clearCanvas();
     drawImgFromlocal();
-    let size = getFontSize();
-    let pos = getPos();
+    
+    // let text =getimgText();
+    // let size = getFontSize();
+    // let pos = getPos();
+    let meme = getgMeme()
+    meme.lines.forEach(line=>{
+
+    
     setTimeout(() => {
         gCtx.lineWidth = '2';
         gCtx.strokeStyle = 'black';
         gCtx.fillStyle = 'white';
-        gCtx.font = `${size}rem impact`;
+        gCtx.font = `${line.size}rem impact`;
         gCtx.textBaseline = 'top';
         gCtx.textAlign = 'center';
-        gCtx.fillText(text, pos.x, pos.y);
-        gCtx.strokeText(text, pos.x, pos.y);
+        gCtx.fillText(line.txt, line.pos.x, line.pos.y);
+        gCtx.strokeText(line.txt, line.pos.x, line.pos.y);
     }, 100);
-}
+})}
 
  function onWriteText(value) {
-     WriteText(value)
-     drawText()
+     WriteText(value);
+     
  }
 
 
@@ -53,7 +59,7 @@ function renderGallery() {
     let images = getImgs();
     let strHtml = images.map(image=>{
         gnextId++
-        return  `<a href="#" onclick="editImage(this)" style="background-image:url(${image.url});" data-idx="${gnextId}"></a>`
+        return  `<a href="#" onclick="onEditImage(this)" style="background-image:url(${image.url});" data-idx="${gnextId}"></a>`
     })
     let elGallery = document.querySelector('.gallery');
      elGallery.innerHTML = strHtml.join('');
@@ -75,4 +81,12 @@ function renderGallery() {
         rowDown()
         drawText()
 
+    }
+    function onEditImage(elimage) {
+        EditImage(elimage)
+        drawImgFromlocal()
+    }
+    function onSwitchLine(){
+        switchLines()
+        console.log(gMeme.selectedLineIdx);
     }
