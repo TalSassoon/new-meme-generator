@@ -1,5 +1,5 @@
 'use strict';
-var   gImgs = [
+var gImgs = [
     { id: 1, url: `./meme-imgs/1.jpg`, keywords: ['happy'] },
     { id: 2, url: `./meme-imgs/2.jpg`, keywords: ['happy'] },
     { id: 3, url: `./meme-imgs/3.jpg`, keywords: ['happy'] },
@@ -11,10 +11,12 @@ var gMeme = {
 
     lines: [{
         txt: 'I never eat Falafel',
-        size: 20,
+        size: 2.5,
         align: 'left',
-        color: 'red'
+        color: 'red',
+        pos: { x:225 ,  y: 6 }
     }]
+
 }
 
 
@@ -22,7 +24,7 @@ function getImgUrl() {
     return `meme-imgs/${gMeme.selectedImgId}.jpg`
 }
 function getimgText() {
-   return gMeme.lines[0].txt;
+    return gMeme.lines[0].txt;
 }
 function clearCanvas() {
     gCtx.clearRect(0, 0, gCanvas.width, gCanvas.height);
@@ -31,8 +33,27 @@ function clearCanvas() {
 }
 
 function WriteText(text) {
-    gMeme.lines[0].txt=text;
+    gMeme.lines[0].txt = text;
 }
-function getImgs(){
+function getImgs() {
     return gImgs
+}
+function getFontSize() {
+    return gMeme.lines[0].size;
+}
+function increaseFont() {
+    gMeme.lines[0].size += 0.5;
+}
+function decreaseFont() {
+    gMeme.lines[0].size -= 0.5;
+}
+function getPos() {
+    return gMeme.lines[0].pos;
+}
+function rowUp() {
+    gMeme.lines[0].pos.y -= 5;
+  
+}
+function rowDown() {
+    gMeme.lines[0].pos.y += 5;
 }

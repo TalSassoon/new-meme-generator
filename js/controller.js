@@ -1,7 +1,6 @@
 var gCanvas;
 var gCtx;
 var gnextId =0;
-
 function init(){
     drawCanvas()
     drawImgFromlocal()
@@ -29,15 +28,17 @@ function drawText() {
     let text =getimgText();
     clearCanvas();
     drawImgFromlocal();
+    let size = getFontSize();
+    let pos = getPos();
     setTimeout(() => {
-        gCtx.lineWidth = 2;
+        gCtx.lineWidth = '2';
         gCtx.strokeStyle = 'black';
         gCtx.fillStyle = 'white';
-        gCtx.font = `2.5rem impact`;
+        gCtx.font = `${size}rem impact`;
         gCtx.textBaseline = 'top';
         gCtx.textAlign = 'center';
-        gCtx.fillText(text, gCanvas.width / 2, 6);
-        gCtx.strokeText(text, gCanvas.width / 2, 6);
+        gCtx.fillText(text, pos.x, pos.y);
+        gCtx.strokeText(text, pos.x, pos.y);
     }, 100);
 }
 
@@ -56,4 +57,22 @@ function renderGallery() {
     })
     let elGallery = document.querySelector('.gallery');
      elGallery.innerHTML = strHtml.join('');
+    }
+    function onIncreaseFont(){
+        increaseFont()
+        drawText()
+    }
+    function onDecreaseFont(){
+        decreaseFont()
+        drawText()
+    }
+    function onRowUp() {
+        rowUp()
+        drawText()
+
+    }
+    function onRowDown() {
+        rowDown()
+        drawText()
+
     }
