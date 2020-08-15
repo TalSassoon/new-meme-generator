@@ -6,6 +6,10 @@
     font-family: 'Montserrat';
     src: url("../font/Montserrat-Regular.ttf") format("truetype");
 }
+@font-face {
+    font-family: 'MontserratThin';
+    src: url("../font/Montserrat-Thin.ttf") format("truetype");
+}
 
 html {
     font-family: Montserrat, serif;
@@ -168,6 +172,8 @@ canvas {
 .copy-rights {
     margin-top: 1rem;
     font-size: 1.1875rem;
+    font-family: MontserratThin, serif;
+    color:#ffffff ;
 }
 
 @media(max-width: 850px) {
