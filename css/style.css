@@ -1,18 +1,22 @@
 * {
     box-sizing: border-box;
 }
+
 @font-face {
     font-family: Montserrat;
     src: url(/font/Montserrat-Regular.ttf);
 }
+
 html {
     font-family: Montserrat, serif;
-   
 }
+
 body {
     margin: 0;
 }
+
 /* CANVAS AND CONTROLS */
+
 .main-container {
     background-color: #e3e3e3;
     margin: 0 auto;
@@ -22,7 +26,6 @@ body {
 
 .editor {
     display: flex;
-    align-items: start;
     display: none;
 }
 
@@ -33,14 +36,17 @@ canvas {
     margin-top: 1.5625rem;
     margin-bottom: 1.5625rem;
 }
+
 /* CONTROLLS */
+
 .controls {
     margin-left: 3.125rem;
     margin-top: 1.5625rem;
     display: flex;
     flex-direction: column;
 }
-.meme-str{
+
+.meme-str {
     text-decoration: none;
     border: none;
     border-radius: 1rem;
@@ -48,24 +54,48 @@ canvas {
     height: 3.75rem;
     text-align: center;
     font-family: Montserrat, serif;
-
     font-size: 1.25rem;
     font-weight: 400;
 }
-.increase-font{
+
+.controll-buttons {
     box-sizing: border-box;
     border-radius: 0.7rem;
     background-color: #ffffff;
     padding: 0.5rem;
     height: 3.75rem;
     width: 3.75rem;
+    cursor: pointer;
+}
+
+.first-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.margin-button-top {
+    margin-top: 0.6rem;
+}
+
+.second-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    flex-grow: 1;
+}
+
+.third-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5625rem;
 }
 
 /* NAV BAR */
 
 .meme-nav-container {
     font-size: 1.1875rem;
-    color:#ffffff;
+    color: #ffffff;
     width: 100%;
     height: 4.125rem;
     background-color: #ff7f00;
@@ -74,45 +104,45 @@ canvas {
     align-items: center;
 }
 
-.nav-links{
+.nav-links {
     display: flex;
     margin-right: 3.125rem;
-
 }
-.logo{
+
+.meme-nav-container .logo {
     margin-left: 3.125rem;
-
 }
-.nav-links a{
+
+.nav-links a {
     text-decoration: none;
     color: white;
     display: flex;
 }
-.seperator{
+
+.seperator {
     height: 2rem;
     width: 1px;
     background-color: #8a8a8a;
     margin-left: 1rem;
     margin-right: 1rem;
 }
+
 /* GALLERY */
 
 .gallery-container {
     width: 100vw;
     justify-content: center;
-    
 }
 
 .gallery {
     display: grid;
     grid-gap: 15px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
-    padding:1.5625rem 3.125rem 1.5625rem 3.125rem ;
-
+    grid-template-columns: repeat(auto-fit, minmax(350px, 350px));
+    padding: 1.5625rem 3.125rem 1.5625rem 3.125rem;
 }
 
 .gallery a {
-    height: 200px;
+    height: 350px;
     background-size: cover;
 }
 
@@ -128,7 +158,32 @@ canvas {
     justify-content: center;
 }
 
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .copy-rights {
     margin-top: 1rem;
     font-size: 1.1875rem;
+}
+
+@media(max-width: 850px) {
+    .editor {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .third-group {
+        margin-top: 2rem;
+    }
+    canvas {
+        margin:0;
+    }
+    .controls {
+        margin:0;
+        margin-top:1.5625rem; ;
+    }
 }

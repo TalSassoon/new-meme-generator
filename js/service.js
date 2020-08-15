@@ -4,7 +4,9 @@ var gImgs = [
     { id: 2, url: `./meme-imgs/2.jpg`, keywords: ['happy'] },
     { id: 3, url: `./meme-imgs/3.jpg`, keywords: ['happy'] },
     { id: 4, url: `./meme-imgs/4.jpg`, keywords: ['happy'] },
-    { id: 5, url: `./meme-imgs/5.jpg`, keywords: ['happy'] }];
+    { id: 5, url: `./meme-imgs/5.jpg`, keywords: ['happy'] },
+    { id: 6, url: `./meme-imgs/6.jpg`, keywords: ['happy'] },
+];
 
 var gMeme = {
     selectedImgId: 5, selectedLineIdx: 0,
@@ -72,13 +74,12 @@ function EditImage(elimage) {
     
 }
 function switchLines() {
-    // gMeme.selectedLineIdx = (gMeme.selectedLineIdx >= gMeme.lines.length)?    0 : gMeme.selectedLineIdx++ ;
     gMeme.selectedLineIdx++
     if (gMeme.selectedLineIdx >= gMeme.lines.length) {
 
         gMeme.selectedLineIdx=0;
     }
-    
+    document.querySelector('.meme-str').value = '';
 }
 function getgMeme() {
     return gMeme;
