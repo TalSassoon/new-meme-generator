@@ -1,43 +1,56 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
+
 <body>
+
     <body onload="init()">
 
         <header class="meme-nav-container">
-            <div class="logo">memegen</div>
-            <div class="meme-links">
-            <a href="#">Gallery</a>
-            <div class="sperator">|</div>
-            <div><a href="#">about</a>
-            </div>
+            <div class="logo"><img src="design-images/logo.png" alt="Logo"></div>
+            <div class="nav-links">
+                <a href="#" onclick="showGallery()">Gallery</a>
+                <div class="seperator"></div>
+                <div><a href="#">about</a>
+                </div>
             </div>
         </header>
-    
-        <main class="main-container" >
-            <canvas id="canvas" height="450" width="450"></canvas>
-            <div class="controls">
-            <input type="text" placeholder="enter meme" class="meme-str" onkeyup="onWriteText(this.value)">
-            <!-- <input type="text" placeholder="enter meme" onchange ="onWriteButtomText(this.value)"> -->
-            <button onclick="onIncreaseFont()">increase</button>
-            <button onclick="onDecreaseFont()">decrease</button>
-            <button onclick="onRowUp()">up</button>
-            <button onclick="onRowDown()">down</button>
-            <button onclick="onSwitchLine()">Switch Lines</button>
-            
-        </div>
+
+        <main class="main-container">
+            <div class="editor">
+                <canvas id="canvas" height="450" width="450"></canvas>
+                <div class="controls">
+                    <input type="text" placeholder="enter meme" class="meme-str" onkeyup="onWriteText(this.value)">
+
+                    <img src="/design-images/increase font - icon.png" alt="Increase Font" class="increase-font" onclick="onIncreaseFont()">
+                    <button onclick="onDecreaseFont()">decrease</button>
+                    <button onclick="onRowUp()">up</button>
+                    <button onclick="onRowDown()">down</button>
+                    <button onclick="onSwitchLine()">Switch Lines</button>
+
+                </div>
+            </div>
+            <section class="gallery-container">
+                <div class="gallery">
+
+                </div>
+            </section>
+
         </main>
-    <section style="display: block;">
-        <div class="gallery" > 
-        
-        </div>
-            </section>  
-<script src="js/service.js"></script>
-<script src="js/controller.js"></script>
-</body>
+        <footer class="main-footer">
+            <div class="logo">memegen</div>
+
+            <div class="copy-rights">all rights reserved 2019</div>
+        </footer>
+
+        <script src="js/service.js"></script>
+        <script src="js/controller.js"></script>
+    </body>
+
 </html>

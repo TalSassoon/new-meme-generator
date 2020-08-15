@@ -85,8 +85,22 @@ function renderGallery() {
     function onEditImage(elimage) {
         EditImage(elimage)
         drawImgFromlocal()
+        let elEditor =  document.querySelector('.editor')
+        elEditor.style.display = 'flex';
+
+        let ellgallery = document.querySelector('.gallery-container');
+        ellgallery.style.display = 'none';
+
     }
     function onSwitchLine(){
         switchLines()
         console.log(gMeme.selectedLineIdx);
+    }
+    function showGallery() {
+       let elEditor =  document.querySelector('.editor')
+        elEditor.style.display = 'none';
+
+        let ellgallery = document.querySelector('.gallery-container');
+        ellgallery.style.display = 'inline';
+        
     }
