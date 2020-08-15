@@ -3,8 +3,8 @@
 }
 
 @font-face {
-    font-family: Montserrat;
-    src: url(font/Montserrat-Regular.ttf);
+    font-family: 'Montserrat';
+    src: url("../font/Montserrat-Regular.ttf") format("truetype");
 }
 
 html {
