@@ -71,6 +71,9 @@ canvas {
     width: 3.75rem;
     cursor: pointer;
 }
+.color{
+    display:none
+}
 
 .first-group {
     display: flex;
@@ -135,11 +138,12 @@ canvas {
 
 .gallery-container {
     width: 100vw;
-    justify-content: center;
 }
 
 .gallery {
     display: grid;
+    justify-content: center;
+
     grid-gap: 15px;
     grid-template-columns: repeat(auto-fit, minmax(350px, 350px));
     padding: 1.5625rem 3.125rem 1.5625rem 3.125rem;
@@ -187,9 +191,13 @@ canvas {
     }
     canvas {
         margin:0;
+        margin-top:1.5625rem; ;
     }
     .controls {
         margin:0;
         margin-top:1.5625rem; ;
+    }
+    .gallery {
+        grid-gap: 5px;
     }
 }

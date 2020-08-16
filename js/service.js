@@ -15,20 +15,17 @@ var gMeme = {
         txt: 'I never eat Falafel',
         size: 2.5,
         align: 'left',
-        color: 'red',
+        color: 'white',
         pos: { x:225 ,  y: 6 }
     },
     {
         txt: 'I never eat Falafel',
         size: 2.5,
         align: 'left',
-        color: 'red',
+        color: 'white',
         pos: { x:225 ,  y: 350 }
     }]
-
-
 }
-
 
 function getImgUrl() {
     return `meme-imgs/${gMeme.selectedImgId}.jpg`
@@ -38,13 +35,10 @@ function getimgText() {
 }
 function clearCanvas() {
     gCtx.clearRect(0, 0, gCanvas.width, gCanvas.height);
-    // You may clear part of the canvas
-    // gCtx.clearRect(0, 0, gCanvas.width / 2, gCanvas.height / 2);
 }
 
 function WriteText(text) {
     gMeme.lines[gMeme.selectedLineIdx].txt = text;
-    drawText();
 }
 function getImgs() {
     return gImgs
@@ -63,24 +57,24 @@ function getPos() {
 }
 function rowUp() {
     gMeme.lines[gMeme.selectedLineIdx].pos.y -= 15;
-  
 }
 function rowDown() {
     gMeme.lines[gMeme.selectedLineIdx].pos.y += 15;
 }
 function EditImage(elimage) {
     gMeme.selectedImgId =parseInt(elimage.dataset.idx)
-
-    
 }
 function switchLines() {
     gMeme.selectedLineIdx++
     if (gMeme.selectedLineIdx >= gMeme.lines.length) {
-
         gMeme.selectedLineIdx=0;
     }
-    document.querySelector('.meme-str').value = '';
+    document.querySelector('.meme-str').value =  gMeme.lines[gMeme.selectedLineIdx].txt;
 }
 function getgMeme() {
     return gMeme;
+}
+function changeColor() {
+    gMeme.lines[gMeme.selectedLineIdx].color=document.querySelector('.color').value ;
+    console.log(document.querySelector('.color').value);
 }
